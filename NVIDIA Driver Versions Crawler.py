@@ -72,7 +72,7 @@ while error_count < MAX_ERROR_COUNT:
             sleep(timeout_count)
             timeout_count += 1
 
-    print("Parsing {} for laguage...".format(id))
+    print("Parsing {} for language...".format(id))
     page = bs(page_html.content, "lxml")
     try:
         language = page.select_one(LANGUAGE_SELECTER).get_text(strip=True)
