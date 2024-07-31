@@ -44,7 +44,7 @@ SUPPORTED_GPU_SELECTER = "#half-spaced"
 LINK_SELECTER = "#lnkDwnldBtn"
 
 
-file = open("E:/NVIDIA Drivers.csv", "r", encoding="UTF-8")
+file = open("NVIDIA Drivers.csv", "r", encoding="UTF-8")
 try:
     line = file.readlines()[-1]
     id = int(line[:line.find(',')]) + 1
@@ -52,7 +52,7 @@ except:
     id = 0
 file.close()
 
-file = open("E:/NVIDIA Drivers.csv", "a", encoding="UTF-8")
+file = open("NVIDIA Drivers.csv", "a", encoding="UTF-8")
 write_count = 0
 # id = 0
 error_count = 0
