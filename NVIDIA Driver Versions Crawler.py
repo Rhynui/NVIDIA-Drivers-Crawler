@@ -144,7 +144,7 @@ while error_count < MAX_ERROR_COUNT:
         write_count = 0
         file.close()
         sleep(1)
-        file = open("E:/NVIDIA Drivers.csv", "a", encoding="UTF-8")
+        file = open("NVIDIA Drivers.csv", "a", encoding="UTF-8")
 
     error_count = 0
     id += 1
