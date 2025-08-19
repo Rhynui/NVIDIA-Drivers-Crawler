@@ -31,7 +31,7 @@ LANGUAGE_CODE = {
     "Other": "en-uk",
 }
 
-MAX_ERROR_COUNT = 400  # the maximum count of consecutive error pages untill the program exit
+MAX_ERROR_COUNT = 400  # the maximum count of consecutive error pages until the program exit
 SAVE_AFTER_COUNT = 1000  # the number of entries wrote into the file before saving
 
 TITLE_SELECTER = "table .pageTitle"
@@ -121,9 +121,9 @@ while error_count < MAX_ERROR_COUNT:
     else:
         version = version_text
         version_type = ""
-    
+
     title = page.select_one(TITLE_SELECTER).get_text(strip=True)
-    
+
     date = page.select_one(DATE_SELECTER).get_text(strip=True).replace('.', '-')
 
     os = page.select_one(OS_SELECTER).get_text(strip=True)
@@ -136,7 +136,7 @@ while error_count < MAX_ERROR_COUNT:
 
     download_link = DOWNLOAD_URL_DOMAIN + page.select_one(LINK_SELECTER).get("href")
 
-    dch = "No" if download_link.find("dch") == -1 else "Yes" 
+    dch = "No" if download_link.find("dch") == -1 else "Yes"
 
     file.write("{},\"{}\",\"{}\",\"{}\",\"{}\",{},\"{}\",\"{}\",\"{}\",\"{}\",\"{}\",\"{}\"\n".format(id, title, version, version_type, dch, date, os, language, size, supported_gpu, page_link, download_link))
     write_count += 1
